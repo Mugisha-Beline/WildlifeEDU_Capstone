@@ -6,8 +6,7 @@
 WildlifeEDU is a digital platform designed to educate and raise awareness about wildlife conservation, with a particular focus on endangered species in Africa. The platform is aimed at partnering with local communities, nature care organizations, and experts to promote sustainable conservation techniques. It also encourages eco-tourism by engaging people in wildlife protection efforts. Through the use of digital innovation and technology, WildlifeEDU supports wildlife conservation projects and serves as a model for future efforts across similar ecosystems.
 
 ## Link to GitHub Repository
-[GitHub Repository](#)  
-*(Note: Replace `#` with the actual GitHub repository link once it is created)*
+[GitHub Repository](https://github.com/Mugisha-Beline/WildlifeEDU.git)  
 
 ## How to Set Up the Environment and Project
 
