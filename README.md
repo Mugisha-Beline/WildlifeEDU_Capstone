@@ -1,7 +1,4 @@
 # WildlifeEDU
-Here’s a draft of the README for your project:
-
----
 
 # WildlifeEDU: Let's Care for Our Wildlife Together
 
