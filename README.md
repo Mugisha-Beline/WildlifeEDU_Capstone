@@ -3,7 +3,7 @@
 # WildlifeEDU: Let's Care for Our Wildlife Together
 
 ## Description
-Endangered Animals in Rwanda’s Akagera National Park is the particular focus of this platform and it will be undertaken in partnership with local communities, nature care organizations as well as experts. Wildlife conservation matters that will be included in the project are different.
+WildlifeEDU is an online animal conservation education-based website with special attention to endangered species in Africa. The main goal of this platform is to work with the local population, nature care institutions, and specialists for the purposes of sustainable conservation. In addition, it seeks to promote eco-tourism by involving people to conserve the wildlife. Using the digital technology and innovation, WildlifeEDU is engaged in the implementation of the wildlife conservation projects and it serves as a blueprint in the future wildlife conservation endeavors in the same ecosystems.
 
 ## Link to GitHub Repository
 [GitHub Repository](https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git)  
