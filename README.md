@@ -79,8 +79,7 @@ The platform is built to be elastic and secure when implemented whether on the c
 2. **Cloud Deployment**  
    For cloud-based hosting, platforms like AWS or Heroku can be used.
    - **AWS EC2**: Use an EC2 instance to run the app and configure security groups for API access.
-   - **RDS**: For database management, use AWS RDS for MongoDB Atlas for MongoDB.
-   - **S3**: Use Amazon S3 to store and serve static assets like images and videos.
+   - **RDS**: For database management, use AWS RDS for MongoDB Atlas.
    - **Heroku**: For a quick and scalable deployment option, deploy the backend directly to Heroku and configure environment variables within the Heroku dashboard.
    ```bash
    git push heroku main
