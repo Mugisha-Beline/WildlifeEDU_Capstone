@@ -63,7 +63,7 @@ Ensure you have the following installed on your machine:
 
 ### Designs
 - **Figma Mockups**  
-   The designs for the platform can be accessed via this Figma link: [Figma Mockups](https://www.figma.com/design/BE9F2PnRlQDYmncrDeQkdR/Capstone-Project-Design?node-id=0-1&t=qyaXhublQVzqeQk3-1)  
+   The designs for the platform can be accessed via this Figma link: [Figma Mockups](https://www.figma.com/design/BE9F2PnRlQDYmncrDeQkdR/Capstone-Project-Design?node-id=0-1&node-type=canvas&t=kRmdayTKOWbrsX6F-0) 
 
 - **Screenshots of App Interfaces**  
    ![WildlifeEDU Interface](./Images/wildlife%20ed.png)  
