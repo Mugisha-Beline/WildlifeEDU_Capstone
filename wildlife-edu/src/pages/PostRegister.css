@@ -1,0 +1,90 @@
+/* src/pages/PostRegister.css */
+
+/* Background section */
+.registered {
+  min-height: 100vh; /* Ensure the container takes up full vertical height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding and margins are included in total size */
+  background-image: url('/leopard.jpg'); /* Update the path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* Post register container */
+.post-register-container {
+  width: 100%; /* Full width */
+  max-width: 500px; /* Max width to ensure it doesn't stretch too much on larger screens */
+  padding: 20px;
+  background-color: rgba(7, 5, 5, 0.9); /* Slight transparency for the background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.post-register-container h2 {
+  color: white;
+}
+
+/* Button styles */
+.post-register-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #3c5916;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.post-register-button:hover {
+  background-color: #2e4410;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .post-register-container {
+    max-width: 80%; /* Reduce width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .post-register-container {
+    max-width: 90%; /* Further reduce width on tablets */
+    padding: 15px;
+    margin-top: 30px; /* Reduce top margin */
+  }
+
+  .post-register-button {
+    padding: 10px 15px; /* Adjust button padding */
+    margin: 5px; /* Reduce margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .post-register-container {
+    width: 95%; /* Nearly full width on small screens */
+    margin-top: 20px; /* Smaller top margin */
+  }
+
+  .post-register-button {
+    width: 100%; /* Full-width buttons for easier clicking */
+    margin: 5px 0; /* Stack buttons with reduced margin */
+  }
+
+  .footer {
+    flex-direction: column; /* Stack footer items */
+    align-items: center; /* Center footer items */
+  }
+
+  .social-icon {
+    width: 25px; /* Adjust social icon size */
+  }
+}

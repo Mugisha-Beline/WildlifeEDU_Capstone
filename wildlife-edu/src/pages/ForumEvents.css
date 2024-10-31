@@ -1,0 +1,217 @@
+/* Main container for forum and events */
+.forum-events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out; /* Page-wide fade-in animation */
+}
+
+/* Forum Section */
+.forum-section {
+  margin-bottom: 50px;
+}
+
+/* Forum Cards Section */
+.forum-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forum-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forum-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.forum-card-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.forum-card-content {
+  flex: 1;
+}
+
+.forum-card-content h4 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.forum-card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: black; /* Changed text color to black */
+}
+
+.forum-card-content a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.forum-card-content a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Forum button */
+.join-forum-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.join-forum-button:hover {
+  background-color: #218838;
+}
+
+/* Events Section */
+.events-section {
+  margin-top: 50px;
+}
+
+.event-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of event cards */
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.event-card {
+  flex: 1 1 30%; /* Flex-grow and shrink with a base width */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.event-card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.event-card p {
+  margin: 5px 0;
+  color: black; /* Changed text color to black */
+}
+
+/* Events button */
+.view-events-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3C5916;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.view-events-button:hover {
+  background-color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards Animation */
+.forum-card,
+.event-card {
+  animation: cardFadeIn 2s ease-in-out;
+}
+
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .forum-card {
+    flex-direction: column; /* Stack icon and content vertically */
+  }
+
+  .forum-card-content {
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .event-cards {
+    flex-direction: column; /* Stack event cards vertically */
+    align-items: center; /* Center cards */
+  }
+
+  .event-card {
+    width: 100%; /* Full width for event cards */
+  }
+
+  .footer {
+    flex-direction: column; /* Stack footer elements */
+    align-items: center; /* Center footer content */
+  }
+}
+
+@media (max-width: 480px) {
+  .forum-header h2,
+  .forum-section h3,
+  .events-section h3 {
+    font-size: 1.5em; /* Smaller headings for smaller devices */
+  }
+
+  .join-forum-button,
+  .view-events-button {
+    width: 100%; /* Full-width buttons */
+    text-align: center; /* Center button text */
+  }
+}

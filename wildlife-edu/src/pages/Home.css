@@ -1,0 +1,183 @@
+/* src/pages/Home.css */
+
+.home {
+  font-family: Arial, sans-serif; /* Update with your preferred font */
+  color: #f8f8f8;                    /* Default text color */
+  padding: 20px;
+}
+.content h1 {
+  font-size: 60px;
+}
+/* Hero Section */
+.background-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background-image: url('/background.jpg') no-repeat center center; /* Update with your image path */
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px; /* Adjust as necessary */
+}
+
+.hero h1 {
+  font-size: 3rem; /* Main title size */
+  margin-bottom: 1rem; /* Space between title and subtitle */
+}
+
+.hero p {
+  font-size: 1.5rem; /* Subtitle size */
+  margin-bottom: 2rem; /* Space between subtitle and button */
+}
+
+.cta-button {
+  background-color: #3C5916; /* Button color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #000000; /* Darker shade for hover */
+}
+
+/* Educational Content Section */
+.educational-content {
+  margin: 50px 0;
+}
+
+.educational-content h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.content-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.content-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  width: 250px; /* Card width */
+  text-align: center;
+  transition: transform 0.3s;
+}
+.content-card img.card-image {
+  width: 100%; /* Make the image fit the width of the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+.content-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  color: #3C5916;
+}
+
+.content-card h3 {
+  font-size: 24px;
+}
+
+.content-card p {
+  font-size: 16px;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.call-to-action h2 {
+  font-size: 36px;
+}
+
+/* src/pages/Home.css */
+
+/* About Section */
+.about {
+  margin: 40px 0;
+}
+
+.about-images {
+  display: flex;
+  justify-content: space-around; /* Space out the images */
+  margin-top: 20px; /* Space between text and images */
+}
+
+.about-image {
+  flex: 1; /* Allow images to take equal space */
+  text-align: center; /* Center text under images */
+  padding: 10px; /* Space around content */
+}
+
+.about-image img {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Contact Section */
+.contact {
+  margin: 40px 0; /* Space around contact section */
+}
+
+.contact-content {
+  display: flex; /* Flex layout for image and form */
+  align-items: center; /* Center vertically */
+}
+
+.contact-image {
+  flex: 1; /* Allow image to take equal space */
+  max-width: 600px; /* Limit width */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: 20px; /* Space between image and form */
+}
+.form-group {
+  margin-bottom: 15px; /* Space below each form group */
+  opacity: 0; /* Initial hidden state for animation */
+  transform: translateY(30px); /* Initial off-screen position */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animation transition */
+  color: white;
+}
+
+ /* Initial hidden state */
+ .fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}

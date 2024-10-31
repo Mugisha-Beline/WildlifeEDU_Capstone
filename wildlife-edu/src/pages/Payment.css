@@ -1,0 +1,80 @@
+/* src/pages/Donate.css */
+
+.donate {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Add this rule to set the color of all <p> elements in the Donate page to black */
+.donate p {
+  color: black; /* Set text color to black */
+}
+
+.donation-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+}
+
+.donation-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px; /* Set a width for the cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.donation-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.donate-button {
+  display: inline-block;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px;
+}
+
+.donate-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer Section */
+.footer {
+  text-align: center; /* Center footer text */
+  padding: 20px 0; /* Padding for footer */
+  background-color: #f1f1f1; /* Light background color */
+  margin-top: 20px;
+}
+
+.footer-links {
+  margin-top: 10px; /* Space above links */
+}
+
+.footer-links a {
+  margin: 0 15px; /* Space between links */
+  color: #f8f8f8; /* Link color */
+}
+
+.custom-donation {
+  margin-top: 20px; /* Space above the custom donation section */
+}
+
+.custom-donation input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded borders */
+  width: 200px; /* Width of the input */
+}
+
+.custom-donation button {
+  margin-left: 10px; /* Space between input and button */
+}

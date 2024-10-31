@@ -1,0 +1,55 @@
+/* src/pages/Payment.css */
+
+.payment {
+  padding: 20px;
+  text-align: center;
+}
+
+.payment-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+}
+
+.payment-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px; /* Set a width for the cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center; /* Center-align text */
+}
+
+/* Add this rule to set the color of all <p> elements in Payment page to black */
+.payment p {
+  color: black; /* Set text color to black */
+}
+
+.payment-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.payment-icon {
+  width: 50px; /* Adjust the icon size */
+  height: 50px;
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+.pay-button {
+  display: inline-block;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px;
+}
+
+.pay-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

@@ -1,0 +1,84 @@
+/* src/components/Footer.css */
+
+.footer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+    align-items: center; /* Center items horizontally */
+    background-color: #3C5916; /* Footer background color */
+    color: black; /* Text color */
+    padding: 20px; /* Padding around the footer */
+    width: 100%; /* Full width */
+    background-color: #181414;
+}
+
+.footer-content {
+    display: flex; /* Use flexbox for content arrangement */
+    flex-direction: column; /* Stack items vertically by default */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width for inner content */
+}
+
+.footer-logo {
+    margin-bottom: 15px; /* Space below logo */
+}
+
+.footer-logo-image {
+    width: 80px; /* Footer logo size */
+}
+
+.footer-links {
+    margin: 10px 0; /* Margin for spacing */
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox to align links */
+    flex-direction: column; /* Stack links vertically */
+}
+
+.footer-links a {
+    background-color: black; /* Black background for each link */
+    color: white; /* Link text color */
+    margin: 5px 0; /* Space between links (10px total) */
+    padding: 10px 15px; /* Padding inside the link box */
+    border-radius: 20px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.footer-links a:hover {
+    background-color: #3C5916; /* Change background color on hover */
+    color: white; /* Keep text color white on hover */
+}
+
+.social-media {
+    display: flex; /* Flexbox for social media icons */
+    justify-content: center; /* Center icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.social-icon {
+    width: 30px; /* Size of social icons */
+    margin: 0 5px; /* Space between icons */
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 769px) {
+    .footer-content {
+        flex-direction: row; /* Arrange items horizontally on large screens */
+        justify-content: space-between; /* Space items evenly */
+        align-items: center; /* Align items vertically */
+    }
+
+    .footer-links {
+        margin: 0 20px; /* Add some margin for spacing on large screens */
+    }
+
+    .footer-logo {
+        margin-bottom: 0; /* Remove bottom margin on large screens */
+    }
+}
+
+/* Additional media query for stacking in smaller screens */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically */
+    }
+}

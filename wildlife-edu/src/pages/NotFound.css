@@ -1,0 +1,74 @@
+/* src/pages/NotFound.css */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  background-color: #3C5916; /* Greenish background color */
+  color: white; /* White text color */
+  padding: 0 20px; /* Add padding for smaller screens */
+  margin: 20px; /* Add margin around the container */
+}
+
+.not-found h1 {
+  font-size: 72px; /* Large font for the 404 code */
+  margin: 0 0 20px 0; /* Space below the 404 text */
+}
+
+.not-found h2 {
+  font-size: 36px; /* Medium font for the error message */
+  margin-top: 10px;
+  margin-bottom: 15px; /* Add space below the error message */
+}
+
+.not-found p {
+  font-size: 18px; /* Normal font size for description */
+  margin-top: 10px;
+  margin-bottom: 20px; /* Add space below the description */
+}
+
+.home-link {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #005f73; /* Updated background color for button */
+  color: white; /* Ensure the button text is white */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.home-link:hover {
+  background-color: #003f5c; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .not-found h1 {
+      font-size: 48px; /* Smaller font for the 404 code on mobile */
+  }
+  .not-found h2 {
+      font-size: 28px; /* Adjust the error message font size */
+  }
+  .not-found p {
+      font-size: 16px; /* Adjust description font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found h1 {
+      font-size: 36px; /* Even smaller font for very small screens */
+  }
+  .not-found h2 {
+      font-size: 24px;
+  }
+  .not-found p {
+      font-size: 14px;
+  }
+  .home-link {
+      padding: 8px 16px; /* Slightly smaller button on small screens */
+  }
+}

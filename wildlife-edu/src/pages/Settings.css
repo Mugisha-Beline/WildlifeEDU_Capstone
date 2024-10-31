@@ -1,0 +1,209 @@
+/* General page layout */
+.settings-page {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #f7f7f7; /* Soft background color */
+}
+.setting-item label {
+  display: block;
+  margin-bottom: 5px;
+  color: black; /* Set label text to black */
+}
+.settings-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: white; /* Content on white background */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+  border-radius: 8px; /* Rounded corners */
+  color: black; /* Set text color to black */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #2c3e50; /* Dark sidebar */
+  color: white; /* White text for contrast */
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for toggle */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle dividers */
+}
+
+.sidebar ul li.active {
+  background-color: #f57c00; /* Highlight active tab */
+  border-radius: 4px;
+}
+
+.profile-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #f57c00; /* Border for profile image */
+}
+
+.profile-image-preview {
+  border-radius: 50%;
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Buttons */
+.cta-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f57c00;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e67e22;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.setting-item {
+  margin-bottom: 20px;
+}
+
+.setting-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.setting-item input[type="text"], 
+.setting-item input[type="password"], 
+.setting-item input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Notification Settings */
+.notification-settings label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notification-settings input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Responsive and Toggle Sidebar Styles */
+@media (max-width: 768px) {
+  .settings-page {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: -250px; /* Initially hide the sidebar */
+    height: 100%;
+    background-color: #2c3e50;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    transform: translateX(250px); /* Show sidebar when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 10px 15px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar ul li {
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .sidebar ul li:hover {
+    background-color: #34495e;
+  }
+
+  .settings-content {
+    padding: 15px;
+  }
+
+  .cta-button, .save-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .profile-image-container {
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-image-preview {
+    width: 100px;
+    height: 100px;
+  }
+}

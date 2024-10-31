@@ -65,8 +65,6 @@ Ensure you have the following installed on your machine:
 - **Figma Mockups**  
    The designs for the platform can be accessed via this Figma link: [Figma Mockups](https://www.figma.com/design/BE9F2PnRlQDYmncrDeQkdR/Capstone-Project-Design?node-id=0-1&t=qyaXhublQVzqeQk3-1)  
 
-- **Screenshots of App Interfaces**  
-   ![WildlifeEDU Interface](./Images/wildlife%20ed.png)  
 ### Deployment Plan
 The platform is built to be elastic and secure when implemented whether on the cloud or on premises. A brief summary of the deployment strategy is below:
 
@@ -77,7 +75,7 @@ The platform is built to be elastic and secure when implemented whether on the c
    ```
 
 2. **Cloud Deployment**  
-   For cloud-based hosting, platforms like AWS or Heroku can be used.
+   For cloud-based hosting, Heroku will be used.
    - **AWS EC2**: Use an EC2 instance to run the app and configure security groups for API access.
    - **RDS**: For database management, use AWS RDS for MongoDB Atlas.
    - **Heroku**: For a quick and scalable deployment option, deploy the backend directly to Heroku and configure environment variables within the Heroku dashboard.

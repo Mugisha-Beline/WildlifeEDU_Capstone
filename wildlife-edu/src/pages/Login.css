@@ -1,0 +1,92 @@
+/* Updated CSS */
+
+/* Login Container */
+.login-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  padding-top: 40px; /* Add some space from the top */
+  position: relative;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  background-image: url('/leopard.jpg'); /* Update the path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* Login Form and Image */
+.login {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px; /* Max width for large screens */
+  background-color: #3C5916;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Form */
+.login-form {
+  width: 50%;
+  padding-right: 20px;
+}
+
+/* Login Image */
+.login-image {
+  width: 50%;
+  text-align: right;
+}
+
+.login-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.p {
+  color: #ddd;
+}
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .login {
+    flex-direction: column; /* Stack form and image vertically */
+    padding: 15px;
+  }
+
+  .login-form, .login-image {
+    width: 100%;
+  }
+  .login-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+.error-message {
+  color: red; /* Change the text color to red */
+  margin-top: 10px; /* Add some margin above */
+  font-weight: bold; /* Make the text bold */
+}
+.success-message {
+  color: rgb(160, 243, 104); /* Change the text color to green */
+  margin-top: 10px; /* Add some margin above */
+  font-weight: bold; /* Make the text bold */
+}

@@ -1,0 +1,95 @@
+/* src/pages/AllEvents.css */
+
+/* General Styles */
+.allevents {
+  padding: 20px;
+  max-width: 1200px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center align */
+}
+
+h2 {
+  text-align: center; /* Center header */
+  margin-bottom: 20px; /* Space below header */
+}
+
+/* Event List Section */
+.events-list {
+  display: flex; /* Use flexbox */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Space between items */
+}
+
+/* Individual Event Item */
+.event-item {
+  display: flex; /* Flex layout for items */
+  flex-direction: column; /* Column layout */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Default text color */
+  border: 1px solid #ddd; /* Border around event items */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  max-width: 300px; /* Maximum width for each event */
+  transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.event-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Event Image */
+.event-image {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Event Details */
+.event-details {
+  padding: 15px; /* Space inside the item */
+  background-color: #f9f9f9; /* Light background for details */
+}
+.event-details p {
+  color: black;
+}
+/* Back Button */
+.back-button {
+  display: inline-block; /* Block for button */
+  margin-top: 20px; /* Space above button */
+  padding: 10px 20px; /* Padding for button */
+  background-color: #4CAF50; /* Button color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 25px; /* Rounded corners */
+  text-align: center; /* Center text */
+}
+
+.back-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger mobile devices */
+@media (max-width: 768px) {
+  .events-list {
+    justify-content: center; /* Center the items on smaller screens */
+  }
+
+  .event-item {
+    max-width: 100%; /* Full width on smaller screens */
+    flex: 1 1 calc(50% - 20px); /* Two items per row with margin */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .event-item {
+    max-width: 100%; /* Full width */
+    flex: 1 1 100%; /* One item per row */
+  }
+
+  .back-button {
+    width: 100%; /* Full width for button */
+    margin: 10px 0; /* Margin on top and bottom */
+  }
+}

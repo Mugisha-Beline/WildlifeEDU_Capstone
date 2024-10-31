@@ -1,0 +1,306 @@
+/* General Styles */
+.Aboutus {
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the content on the page */
+  padding: 0 20px; /* Adds some padding on the sides */
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+.about {
+  margin: 50px 0;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  color: #3C5916;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Upcoming Events Link */
+.event-link {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: #3C5916;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.event-link:hover {
+  background-color: #3C5916;
+}
+
+.background-section {
+  position: relative;
+  background: url('../assets/images/background.jpg') center/cover no-repeat;
+  padding: 50px 20px;
+  color: white;
+}
+
+.background-section h1 {
+  font-size: 56px;
+}
+
+.background-section .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* About Us Section */
+.about-images {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.about-image {
+  max-width: 45%;
+}
+
+.about-image img {
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* Educational Content Section */
+.educational-content {
+  background-color: #3C5916;
+  padding: 50px 20px;
+}
+
+.content-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.content-card {
+  max-width: 30%;
+  background-color: rgb(247, 244, 244);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-image {
+  max-width: 45%;
+  margin-right: 30px;
+}
+
+form {
+  flex-grow: 1;
+  max-width: 45%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical; /* Allows vertical resizing */
+}
+
+.contact-button {
+  padding: 10px 20px;
+  background-color: #3C5916;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #3C5916;
+}
+
+.error-message {
+  color: #3C5916;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: #3C5916;
+  margin-top: 10px;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  padding: 50px 20px;
+  background-color: #3C5916;
+  color: white;
+  text-align: center;
+}
+
+.call-to-action .cta-button {
+  padding: 10px 20px;
+  background-color: white;
+  color: #3C5916;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.call-to-action .cta-button:hover {
+  background-color: #fff;
+  color: #3C5916;
+}
+
+/* Animation Classes */
+.about-fade-in-up,
+.about-fade-in-left,
+.about-fade-in-right {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.call-to-action p {
+  color: white;
+}
+
+.about-fade-in-left p {
+  transform: translateX(-20px);
+  color: black;
+}
+
+.about-fade-in-left p {
+  color: black;
+}
+
+.about-fade-in-right p {
+  transform: translateX(20px);
+  color: black;
+  font-size: 18px;
+}
+
+.about-fade-in-down p {
+  color: white;
+  font-size: 18px;
+}
+
+.about-fade-in-up p {
+  color: black;
+  font-size: 18px;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  /* Add margins for tablets and smaller screens */
+  .Aboutus {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-card {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-image,
+  form {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Add padding on the sides for smaller screens */
+  .Aboutus {
+    padding: 0 20px;
+  }
+}

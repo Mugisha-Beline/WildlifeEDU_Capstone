@@ -1,0 +1,187 @@
+/* src/components/Navbar.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Align items on both ends */
+  align-items: center;            /* Center items vertically */
+  padding: 10px 20px;
+  background-color: #3C5916;
+  color: white;
+  width: 100%;                   /* Ensures navbar takes full width */
+  max-width: 1400px;             /* Limits the width for larger screens */
+  margin: 0 auto;                /* Centers navbar */
+}
+
+.navbar-logo img {
+  width: 100px; 
+  border-radius: 60px;                
+}
+
+/* Search box styling */
+.search-box {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+  max-width: 300px;
+  width: 100%;                  /* Ensures full width on small screens */
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-links li {
+  font-size: 18px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: white;
+  color: #3C5916;
+  border-radius: 4px;
+}
+
+/* Special styling for Donate button */
+.navbar-links .donate-button {
+  background-color: #0b0e0b;       /* Updated to specific color */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .donate-button:hover {
+  background-color: #018000;   /* Darker shade on hover */
+}
+
+/* Menu toggle button (only visible on small screens) */
+.menu-toggle {
+  display: none; /* Hidden on larger screens */
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+
+.menu-icon {
+  font-size: 30px;
+  color: white;
+}
+.search-form {
+  display: flex; /* Align search input and button */
+  align-items: center;
+}
+
+.search-button {
+  padding: 5px 10px; /* Add padding */
+  background-color: #5a8e3e; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  margin-left: 5px; /* Space between input and button */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.search-button:hover {
+  background-color: #4c7b32; /* Darker shade on hover */
+}
+/* MEDIA QUERIES */
+
+/* Large screens (desktops/laptops) */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .search-box {
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  .navbar-links {
+    display: flex; /* Ensure links are displayed */
+  }
+  
+  .menu-toggle {
+    display: none; /* Hidden on large screens */
+  }
+}
+
+/* Tablets (medium screens) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .search-box {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .navbar-links {
+    display: flex;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100%; /* Full width on mobile */
+  }
+
+  .search-box {
+    width: 100%; /* Full width for search box on mobile */
+    margin-bottom: 10px;
+  }
+
+  .menu-toggle {
+    display: block; /* Show menu toggle on small screens */
+  }
+
+  .navbar-links {
+    display: none; /* Hidden by default on small screens */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Show the links when menu is open */
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 5px 0;
+  }
+
+  .navbar-links a {
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+}
