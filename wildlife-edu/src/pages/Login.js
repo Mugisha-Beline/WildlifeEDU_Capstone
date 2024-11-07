@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import { login } from './Firebase'; 
-import './Home.css';
 import './Login.css'; 
 
 const Login = () => {
@@ -37,7 +36,7 @@ const Login = () => {
           setErrorMessage("Incorrect username or password. Please try again."); // Wrong password
           break;
         case 'auth/invalid-credential':
-          setErrorMessage("Invalid email or password format. Please check your credentials."); // Invalid credentials
+          setErrorMessage("Invalid email or password. Please check your credentials."); // Invalid credentials
           break;
         default:
           setErrorMessage(error.message); // Generic error message for other errors

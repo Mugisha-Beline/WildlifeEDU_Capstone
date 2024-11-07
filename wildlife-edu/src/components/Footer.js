@@ -1,13 +1,13 @@
-// src/components/Footer.js
+// Footer.js
 
 import React from 'react';
-import { Link } from 'react-router-dom'; // Ensure Link is imported
-import './Footer.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer about-fade-in-up">
-      <div className="footer-content"> {/* New wrapper for flex layout */}
+    <footer className="footer about-fade-in-up" style={{ backgroundColor: '#181414', color: 'white' }}>
+      <div className="footer-content">
         <div className="footer-logo">
           <img src="/WildlifeEduLogo.jpg" alt="Wildlife EDU Logo" className="footer-logo-image" />
         </div>

@@ -33,13 +33,11 @@ const About = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Email validation helper function
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
-  // Form validation before submission
   const validateForm = () => {
     if (name.trim().length < 2) {
       setErrorMessage('Name should be at least 2 characters long.');
@@ -56,7 +54,6 @@ const About = () => {
     return true;
   };
 
-  // Firebase form submission with validation
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(''); // Reset error message before validation
@@ -96,11 +93,10 @@ const About = () => {
           <div className="content">
             <h1>Let’s Care About Our Wildlife Together!</h1>
           </div>
-          <Link to="/login" className="cta-button">Upcoming Events</Link>
+          <Link to="/all-events" className="cta-button">Upcoming Events</Link>
         </div>
       </div>
 
-      {/* Educational Content Section */}
       <section className="educational-content about-fade-in-up">
         <h2>Study with us at WildlifEDU!</h2>
         <div className="content-cards">
@@ -124,7 +120,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="contact about-fade-in-up">
         <h2>Let’s Connect With Your Ideas!</h2>
         <div className="contact-content">

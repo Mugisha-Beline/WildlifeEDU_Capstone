@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import './Courses.css';
-import { getAllCourses, getUserCourses } from './utils/api';
+import { getAllCourses, getUserCourses } from '../components/utils/api';
 
 const Courses = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -108,25 +108,32 @@ const Courses = () => {
 
       <main className="courses-content">
         <header className="courses-header">
-          <h1>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Courses</h1>
+            <h1>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Courses</h1>
         </header>
 
         <div className="courses-grid">
-          {getFilteredCourses().map(course => (
-            <div key={course.id || course.course} className="course-card">
-              <img src={course.image} alt={course.title} className="course-image" />
-              <Link to={`/courses/${course.id}`} className="course-title">
-                <h2>{course.title}</h2>
-              </Link>
-              <p className="course-description">{course.description}</p>
-              <Link to={`/courses/${course.id}`} className="view-course-button">View Course</Link>
-              {userCourses.some(uc => uc.course === course.title) && (
-                <p>Progress: {userCourses.find(uc => uc.course === course.title).progress}%</p>
-              )}
-            </div>
-          ))}
+            {getFilteredCourses().map(course => (
+                <div key={course.id || course.course} className="course-card">
+                    <img src={course.image} alt={course.title} className="course-image" />
+                    
+                    {/* Link to Course Folder */}
+                    <Link to={`/course1`} className="course-title">
+                        <h2>{course.title}</h2>
+                    </Link>
+                    
+                    <p className="course-description">{course.description}</p>
+                    
+                    {/* Direct "View Course" to the Course's Main File */}
+                    <Link to={`/course2`} className="view-course-button">View Course</Link>
+                    
+                    {/* Display Progress if Available */}
+                    {userCourses.some(uc => uc.course === course.title) && (
+                        <p>Progress: {userCourses.find(uc => uc.course === course.title).progress}%</p>
+                    )}
+                </div>
+            ))}
         </div>
-      </main>
+    </main>
     </div>
   );
 };

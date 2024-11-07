@@ -3,6 +3,11 @@
 html, body {
   height: 100%; /* Full height for body */
   margin: 0; /* Remove default margin */
+  box-sizing: border-box; /* Ensures consistent sizing */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 .app-container {
@@ -12,15 +17,16 @@ html, body {
 }
 
 .main-content {
-  flex: 1; /* This allows the main content to grow and fill available space */
-  padding: 20px; /* Add some padding for content */
+  flex: 1; /* Allows the main content to grow and fill available space */
+  padding: 20px; /* Add padding for content */
 }
 
+/* Footer Styling */
 .footer {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
-  background-color: #3C5916; /* Footer background color */
+  background-color: #181414 !important; /* Consistent dark background for all pages */
   color: white; /* Text color */
   padding: 20px; /* Padding around the footer */
   width: 100%; /* Full width */

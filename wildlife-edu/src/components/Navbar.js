@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for programmatic navigation
 import './Navbar.css'; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(''); // State to hold search input
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate(); // Initialize navigate hook
 
   // Toggle the menu on small screens
   const toggleMenu = () => {
@@ -16,14 +17,31 @@ const Navbar = () => {
     setSearchTerm(event.target.value);
   };
 
+  // Map search terms to courses
+  const courseMap = {
+    'conservation': '/course1',
+    'birds': '/course2',
+    'reptiles': '/course3',
+    'marine': '/course4',
+    // Add more terms and course routes as needed
+  };
+
   // Handle search submission
   const handleSearchSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission
-    if (searchTerm.trim()) {
-      const searchUrl = `https://www.google.com/search?q=wildlife+${encodeURIComponent(searchTerm)}`;
-      window.open(searchUrl, '_blank'); // Open in a new tab
-      setSearchTerm(''); // Clear the search input after submission
+    event.preventDefault();
+
+    // Check if there's a matching course route
+    const courseRoute = Object.keys(courseMap).find(term => 
+      searchTerm.toLowerCase().includes(term)
+    );
+
+    if (courseRoute) {
+      navigate(courseMap[courseRoute]); // Navigate to the matched course
+    } else {
+      alert('No matching course found for your search.'); // Alert if no match found
     }
+
+    setSearchTerm(''); // Clear the search input after submission
   };
 
   return (
@@ -47,7 +65,7 @@ const Navbar = () => {
 
         {/* Menu toggle button for small screens */}
         <div className="menu-toggle" onClick={toggleMenu}>
-          <span className="menu-icon">&#9776;</span> {/* Hamburger icon */}
+          <span className="menu-icon">&#9776;</span>
         </div>
 
         {/* Navbar links */}

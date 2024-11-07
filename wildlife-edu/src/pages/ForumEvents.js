@@ -14,7 +14,7 @@ const ForumEvents = () => {
         
         {/* Discussion Forum Section */}
         <div className="forum-section">
-          <h3>Discussion Forum</h3>
+          <h1>Discussion Forum</h1>
           <p>Join the conversation about wildlife conservation. Share your thoughts, ask questions, and connect with other community members.</p>
 
           {/* Chat-Like Forum Topics with Icon */}
@@ -52,7 +52,7 @@ const ForumEvents = () => {
 
         {/* Events Section */}
         <div className="events-section">
-          <h3>Upcoming Events</h3>
+          <h1>Upcoming Events</h1>
           
           {/* Event Cards with Animations */}
           <div className="event-cards">

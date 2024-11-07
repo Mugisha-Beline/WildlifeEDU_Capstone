@@ -8,7 +8,7 @@
     color: black; /* Text color */
     padding: 20px; /* Padding around the footer */
     width: 100%; /* Full width */
-    background-color: #181414;
+    background-color: #181414 ;
 }
 
 .footer-content {
@@ -34,7 +34,7 @@
 }
 
 .footer-links a {
-    background-color: black; /* Black background for each link */
+    background-color: #3C5916; /* Black background for each link */
     color: white; /* Link text color */
     margin: 5px 0; /* Space between links (10px total) */
     padding: 10px 15px; /* Padding inside the link box */

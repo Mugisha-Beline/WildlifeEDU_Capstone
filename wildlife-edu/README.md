@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# WildlifeEDU
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WildlifeEDU: Let's Care for Our Wildlife Together
 
-## Available Scripts
+## Description
+WildlifeEDU is an online animal conservation education-based website with special attention to endangered species in Africa. The main goal of this platform is to work with the local population, nature care institutions, and specialists for the purposes of sustainable conservation. In addition, it seeks to promote eco-tourism by involving people to conserve the wildlife. Using the digital technology and innovation, WildlifeEDU is engaged in the implementation of the wildlife conservation projects and it serves as a blueprint in the future wildlife conservation endeavors in the same ecosystems.
 
-In the project directory, you can run:
+## Link to GitHub Repository
+[GitHub Repository](https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git)  
 
-### `npm start`
+## How to Set Up the Environment and Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+Ensure you have the following installed on your machine:
+- *Node.js* (for the backend)
+- *Python* (Django for the backend)
+- *MongoDB* (For database)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation Steps
+1. *Clone the Repository*  
+   bash
+   git clone <repository-url>
+   cd <repository-name>
+   
 
-### `npm test`
+2. *Install Dependencies*  
+   For a Node.js-based backend, run:  
+   bash
+   npm install
+     
+   For a Python-based backend, set up a virtual environment and install requirements:  
+   bash
+   python3 -m venv env
+   source env/bin/activate
+   pip install -r requirements.txt
+   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. *Set Up Environment Variables*  
+   Create a .env file in the root directory and include the necessary API keys, database credentials, and environment-specific settings like:
+   bash
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USER=yourusername
+   DB_PASS=yourpassword
+   
 
-### `npm run build`
+4. *Database Setup*  
+   Create the necessary database tables by running the migrations or initializing the database schema:
+   bash
+   npm run db:migrate # for Node.js-based apps
+   python manage.py migrate # for Django apps
+   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. *Run the Application*  
+   To start the development server, run:  
+   bash
+   npm start # Node.js
+   python app.py # Django
+   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. *Access the Application*  
+   Open your browser and go to http://localhost:3000 (or another port as defined in your settings) to view the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Designs
+- *Figma Mockups*  
+   The designs for the platform can be accessed via this Figma link: [Figma Mockups](https://www.figma.com/design/BE9F2PnRlQDYmncrDeQkdR/Capstone-Project-Design?node-id=0-1&t=qyaXhublQVzqeQk3-1)  
 
-### `npm run eject`
+### Deployment Plan
+The platform is built to be elastic and secure when implemented whether on the cloud or on premises. A brief summary of the deployment strategy is below:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. *Docker Deployment*  
+   Create a Dockerfile and docker-compose.yml for multi-container deployments (backend, database).
+   bash
+   docker-compose up --build
+   
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. *Cloud Deployment*  
+   For cloud-based hosting, Heroku will be used.
+   - *AWS EC2*: Use an EC2 instance to run the app and configure security groups for API access.
+   - *RDS*: For database management, use AWS RDS for MongoDB Atlas.
+   - *Heroku*: For a quick and scalable deployment option, deploy the backend directly to Heroku and configure environment variables within the Heroku dashboard.
+   bash
+   git push heroku main
+   
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. *Monitoring and Logging*  
+   Set up *CloudWatch* or *Stackdriver* to monitor application performance and log errors in real-time. This ensures the application runs smoothly post-deployment.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. *Final Deployment*  
+  Once the application has undergone local testing and all issues have been ironed out, the last phase will entail Adjusting domain settings and enabling Secure socket layer for the purposes of security communication.

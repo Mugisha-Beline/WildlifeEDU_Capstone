@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from './Firebase'; 
 import { collection, addDoc } from 'firebase/firestore'; 
-import './Home.css';
 import './About.css';
 import './Contact.css';
 
@@ -30,7 +29,7 @@ const About = () => {
     <div className="Aboutus">
       <div className="about about-fade-in-up">
         <div>
-          <h3>About Us</h3>
+          <h1>About Us</h1>
           <p className='p'>
             Endangered Animals in Rwanda’s Akagera National Park is the particular focus of the study, and it will be undertaken in partnership with local communities, nature care organizations, as well as experts.
           </p>
@@ -38,12 +37,12 @@ const About = () => {
         <img src="/elephants.jpg" alt="Mission" />
         <div className="about-images">
           <div className="about-image about-fade-in-left">
-            <h3>Our Mission</h3>
+            <h1>Our Mission</h1>
             <p className='p'>We believe that education is the key to fostering a deeper understanding of wildlife.</p>
             <img src="/zebra.jpg" alt="Mission" />
           </div>
           <div className="about-image about-fade-in-right">
-            <h3>Our Vision</h3>
+            <h1>Our Vision</h1>
             <p className='p'>Join our community today and start your journey toward making a difference!</p>
             <img src="/elephants.jpg" alt="Vision" />
           </div>

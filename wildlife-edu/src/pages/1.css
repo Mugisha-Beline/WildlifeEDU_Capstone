@@ -1,0 +1,80 @@
+/* 1.css: Styles for Conservation Course */
+
+/* General Layout */
+.conservation-course {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* YouTube Link Section */
+.youtube-link-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.youtube-link-card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.youtube-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.youtube-link-card:hover .overlay {
+    opacity: 1;
+}
+
+.play-button {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Course Topics */
+.topics-section {
+    margin-bottom: 20px;
+}
+
+.topic {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.topic h3 {
+    color: #4caf50;
+    margin-bottom: 5px;
+}
+
+.topic p {
+    color: #555;
+    margin-bottom: 10px;
+}
