@@ -30,7 +30,7 @@ Ensure you have the following installed on your machine:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git
-   cd WildlifEdu
+   cd WildlifeEDU_Capstone
    ```
 
 2. **Install Dependencies**  
