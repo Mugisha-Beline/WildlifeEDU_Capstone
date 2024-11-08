@@ -29,7 +29,7 @@ Ensure you have the following installed on your machine:
 ### Installation Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Mugisha-Beline/WildlifEdu.git
+   git clone https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git
    cd WildlifEdu
    ```
 
