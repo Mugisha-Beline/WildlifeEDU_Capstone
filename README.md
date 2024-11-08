@@ -6,7 +6,7 @@
 WildlifEdu is an online education platform focused on animal conservation, with special attention to endangered species in Africa. The main goal of this platform is to collaborate with local communities, conservation organizations, and specialists to promote sustainable wildlife conservation. Additionally, it encourages eco-tourism by actively involving people in conservation efforts. WildlifeEDU leverages digital technology and innovation to support various conservation projects, serving as a blueprint for future conservation efforts within similar ecosystems.
 
 ### Link to GitHub Repository
-[GitHub Repository](https://github.com/Mugisha-Beline/WildlifEdu.git)  
+[GitHub Repository](https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git)  
 
 ---
 
@@ -189,13 +189,6 @@ The platform is built to be flexible and secure, supporting both cloud and on-pr
 - Deploy Backend: `git push heroku main`
 
 ---
-
-## Contributions
-Contributions to WildlifeEDU are welcome. To contribute:
-1. Fork the repository.
-2. Create a feature branch.
-3. Make your changes.
-4. Submit a pull request for review.
 
 ## License
 This project is open-source and available under the MIT License.
