@@ -78,3 +78,47 @@
     color: #555;
     margin-bottom: 10px;
 }
+/* Quiz Section */
+.quiz-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    width: 100%; /* Make the quiz section span the full width */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.quiz-question {
+    margin-bottom: 15px;
+    color: black; /* Ensure the text is black */
+    font-size: 18px;
+    width: 200%; /* Use full width for the question */
+}
+
+.quiz-option {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: black; /* Ensure the options text is black */
+    width: 200%; /* Use full width for options */
+}
+.quiz-question p {
+    color: #3C5916;
+}
+.quiz-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+.submit-quiz, .retry-quiz {
+    background-color: #3C5916;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-quiz:hover, .retry-quiz:hover {
+    background-color: #3C5916;
+}

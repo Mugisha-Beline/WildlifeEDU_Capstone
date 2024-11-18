@@ -1,4 +1,4 @@
-// src/pages/About.js
+// src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from './Firebase'; 
@@ -15,6 +15,7 @@ const About = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Existing useEffect and validation functions
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.about-fade-in-up, .about-fade-in-left, .about-fade-in-right');
@@ -120,6 +121,27 @@ const About = () => {
         </div>
       </section>
 
+      <section className="testimonial-section about-fade-in-up">
+        <h2>What People Are Saying</h2>
+        <div className="testimonial-cards">
+          <div className="testimonial-card about-fade-in-left">
+          <img src="/person2.jpg" alt="Testimony" className="card-image" style={{ width: "120px", height: "120px" }} />
+            <p>"WildlifeEDU is an amazing platform! I learned so much about conservation!"</p>
+            <h4>- Alex N.</h4>
+          </div>
+          <div className="testimonial-card about-fade-in-up">
+          <img src="/person1.jpg" alt="Testimony" className="card-image" style={{ width: "120px", height: "120px" }} />
+            <p>"The best place to connect and learn about our planet's wildlife."</p>
+            <h4>- Linda M.</h4>
+          </div>
+          <div className="testimonial-card about-fade-in-right">
+          <img src="/person3.jpg" alt="Testimony" className="card-image" style={{ width: "120px", height: "120px" }} />
+            <p>"A unique educational experience. WildlifeEDU truly cares for nature."</p>
+            <h4>- John R.</h4>
+          </div>
+        </div>
+      </section>
+
       <section className="contact about-fade-in-up">
         <h2>Let’s Connect With Your Ideas!</h2>
         <div className="contact-content">
@@ -166,6 +188,21 @@ const About = () => {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
           </form>
+        </div>
+      </section>
+
+      <section className="map-section about-fade-in-up">
+      <h2 style={{ color: 'white' }}>Visit Us in Rwanda</h2>
+        <div className="map-container">
+          <iframe
+            title="Rwanda Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994447.4222833682!2d28.92874872082043!3d-1.9402786002057948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcae7d95e4c7c7%3A0x6f2761c7ec2f5e05!2sRwanda!5e0!3m2!1sen!2s!4v1638198020600!5m2!1sen!2s"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
         </div>
       </section>
     </div>
