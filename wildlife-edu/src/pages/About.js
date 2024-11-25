@@ -78,13 +78,13 @@ const About = () => {
             <img src="/blog1.jpg" alt="Blog Post 1" />
             <h3>Blog Post Title 1</h3>
             <p>Lions and their little ones...</p>
-            <Link to="/blog/1" className="read-more">Read More</Link>
+            <Link to="/blog1" className="read-more">Read More</Link>
           </div>
           <div className="blog-post">
             <img src="/blog2.jpg" alt="Blog Post 2" />
             <h3>Blog Post Title 2</h3>
             <p>Birds in Akagera National Park...</p>
-            <Link to="/blog/2" className="read-more">Read More</Link>
+            <Link to="/blog1" className="read-more">Read More</Link>
           </div>
           {/* Add more blog post elements as needed */}
         </div>

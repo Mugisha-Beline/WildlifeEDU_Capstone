@@ -24,7 +24,8 @@ import Course3 from './pages/Course3';
 import Course4 from './pages/Course4';
 import Course5 from './pages/Course5';
 import Partnerships from './pages/Partnerships';
-import Blogs from './pages/Blogs';
+import Blog1 from "./pages/Blog1";
+
 function App() {
   return (
     <Router>
@@ -51,7 +52,7 @@ function App() {
             <Route path="/course4" element={<Course4 />} />
             <Route path="/course5" element={<Course5 />} />
             <Route path="/partnerships" element={<Partnerships />} />
-            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog1" element={<Blog1 />} />
             <Route path="*" element={<NotFound />} /> {/* Catch-all for undefined routes */}
           </Routes>
         </div>

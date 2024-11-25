@@ -1,0 +1,86 @@
+/* Blogs.css */
+
+/* General Blog Styles */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.blog-title {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.blog-content {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Post Section */
+.post-section {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post-form input,
+.post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background: #45a049;
+}
+
+/* Posts List */
+.posts-list {
+    margin-top: 20px;
+}
+
+.post-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-item strong {
+    font-size: 1rem;
+    color: #4CAF50;
+}
+
+.post-item p {
+    margin: 5px 0 0;
+    color: #555;
+}

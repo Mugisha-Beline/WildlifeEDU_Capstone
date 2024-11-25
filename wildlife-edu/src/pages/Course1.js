@@ -49,13 +49,7 @@ function ConservationCourse() {
         }
     ]);
 
-    const [forumPosts, setForumPosts] = useState([]);
-    const [totalDonations, setTotalDonations] = useState(0);
-    const [donationAmount, setDonationAmount] = useState("");
-    const [username, setUsername] = useState("");
-    const [message, setMessage] = useState("");
-
-    // State for quiz
+    // Quiz state
     const [quizSubmitted, setQuizSubmitted] = useState(false);
     const [score, setScore] = useState(0);
     const [answers, setAnswers] = useState({});
@@ -120,29 +114,6 @@ function ConservationCourse() {
         }
     ];
 
-    // Handle adding a new post to the forum
-    const addPost = () => {
-        if (username && message) {
-            const newPost = { username, message, timestamp: new Date().toLocaleString() };
-            setForumPosts([...forumPosts, newPost]);
-            setMessage(""); // Clear message field
-        } else {
-            alert("Please enter both a username and message.");
-        }
-    };
-
-    // Handle donation
-    const handleDonation = () => {
-        const amount = parseFloat(donationAmount);
-        if (amount > 0) {
-            setTotalDonations(totalDonations + amount);
-            alert(`Thank you for your donation of $${amount}!`);
-            setDonationAmount(""); // Clear donation field
-        } else {
-            alert("Please enter a valid donation amount.");
-        }
-    };
-
     // Handle answer selection
     const handleAnswerChange = (questionId, selectedOption) => {
         setAnswers({ ...answers, [questionId]: selectedOption });
@@ -161,17 +132,20 @@ function ConservationCourse() {
         setScore(calculatedScore);
         setQuizSubmitted(true);
 
+        try {
+            // Save the score to Firebase
+            await addDoc(collection(db, "quiz_scores"), { score: calculatedScore, timestamp: new Date() });
+            console.log("Score saved to Firebase!");
+        } catch (error) {
+            console.error("Error saving score:", error.message);
+        }
+
+        // Handle pass/fail
         if (calculatedScore >= 80) {
             alert(`Congratulations! You passed with a score of ${calculatedScore}%.`);
-            try {
-                await addDoc(collection(db, "quiz_scores"), { score: calculatedScore, timestamp: new Date() });
-                console.log("Score saved to Firebase!");
-            } catch (error) {
-                console.error("Error saving score:", error.message);
-            }
         } else {
-            alert(`You scored ${calculatedScore}%. You need at least 80% to pass. Try again!`);
-            setRetry(true);
+            alert(`You scored ${calculatedScore}%. You need at least 80% to pass. Please repeat the course.`);
+            setRetry(true); // Enable retry option
         }
     };
 
@@ -181,23 +155,24 @@ function ConservationCourse() {
         setScore(0);
         setQuizSubmitted(false);
         setRetry(false);
+
+        // Optionally scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (
         <div className="conservation-course">
             <h1 style={{ color: 'black' }}>Conservation Course</h1>
-
-            {/* YouTube Link Section */}
-            <section className="youtube-link-section" onClick={() => window.open('https://www.youtube.com/watch?v=qKgRbkCkRFY', '_blank')}>
-                <div className="youtube-link-card">
-                    <img src="background.jpg" alt="Watch Conservation Video" className="youtube-thumbnail" />
+{/* YouTube Video Link Section */}
+<section className="youtube-link-section">
+                <div className="youtube-link-card" onClick={() => window.open('https://www.youtube.com/watch?v=qKgRbkCkRFY', '_blank')}>
+                    <img src="/kwita-izina.jpg" alt="Watch Conservation Video" className="youtube-thumbnail" />
                     <div className="overlay">
                         <span className="play-button">&#9658;</span>
                         <p>Watch Conservation Video on YouTube</p>
                     </div>
                 </div>
             </section>
-
             {/* Course Topics Section */}
             <section className="topics-section">
                 <h2>Course Topics</h2>
@@ -215,27 +190,30 @@ function ConservationCourse() {
             <section className="quiz-section">
                 <h2>Course Quiz</h2>
                 {!quizSubmitted || retry ? (
-                    <form onSubmit={(e) => e.preventDefault()}>
+                    <form className="quiz-form" onSubmit={(e) => { e.preventDefault(); handleSubmitQuiz(); }}>
                         {questions.map((q) => (
                             <div key={q.id} className="quiz-question">
                                 <p>{q.question}</p>
-                                {q.options.map((option, index) => (
-                                    <label key={index} className="quiz-option">
-                                        <input
-                                            type="radio"
-                                            name={`question-${q.id}`}
-                                            value={index}
-                                            checked={answers[q.id] === index}
-                                            onChange={() => handleAnswerChange(q.id, index)}
-                                        />
-                                        {option}
-                                    </label>
-                                ))}
+                                <div className="quiz-options">
+                                    {q.options.map((option, index) => (
+                                        <label className="quiz-option" key={index}>
+                                            <input
+                                                type="radio"
+                                                name={`question-${q.id}`}
+                                                value={index}
+                                                onChange={() => handleAnswerChange(q.id, index)}
+                                                style={{ display: "none" }}
+                                            />
+                                            <div className={`option-box ${answers[q.id] === index ? "selected" : ""}`}>
+                                                {String.fromCharCode(97 + index)}
+                                            </div>
+                                            <div className="option-text">{option}</div>
+                                        </label>
+                                    ))}
+                                </div>
                             </div>
                         ))}
-                        <button onClick={handleSubmitQuiz} className="submit-quiz">
-                            Submit Quiz
-                        </button>
+                        <button className="submit-quiz" type="submit">Submit Quiz</button>
                     </form>
                 ) : (
                     <div className="quiz-result">
@@ -247,46 +225,6 @@ function ConservationCourse() {
                         )}
                     </div>
                 )}
-            </section>
-
-            {/* Community Forum Section */}
-            <section className="forum-section">
-                <h2>Community Forum</h2>
-                <div className="forum-input">
-                    <input
-                        type="text"
-                        placeholder="Your Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <textarea
-                        placeholder="Your Message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                    />
-                    <button onClick={addPost}>Post</button>
-                </div>
-                <div className="forum-posts">
-                    {forumPosts.map((post, index) => (
-                        <div key={index} className="forum-post">
-                            <p><strong>{post.username}</strong> ({post.timestamp})</p>
-                            <p>{post.message}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Donation Section */}
-            <section className="donation-section">
-                <h2>Support Conservation Efforts</h2>
-                <p>Total Donations: ${totalDonations.toFixed(2)}</p>
-                <input
-                    type="number"
-                    placeholder="Donation Amount"
-                    value={donationAmount}
-                    onChange={(e) => setDonationAmount(e.target.value)}
-                />
-                <button onClick={handleDonation}>Donate</button>
             </section>
         </div>
     );

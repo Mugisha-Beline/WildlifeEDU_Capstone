@@ -30,7 +30,12 @@ const Forum = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const fetchedPosts = await getPosts();
-      setPosts(fetchedPosts);
+      // Ensure all posts have a `replies` array to avoid undefined issues
+      const normalizedPosts = fetchedPosts.map((post) => ({
+        ...post,
+        replies: post.replies || [], // Default to an empty array if undefined
+      }));
+      setPosts(normalizedPosts);
     };
 
     fetchPosts();
@@ -46,8 +51,8 @@ const Forum = () => {
         timestamp: new Date().toISOString(), // Store the timestamp as ISO string
         likes: 0,
         dislikes: 0,
-        replies: [],
-        userReaction: null // Initialize userReaction for the new post
+        replies: [], // Initialize replies as an empty array
+        userReaction: null, // Initialize userReaction for the new post
       };
 
       // Add the post to Firestore
@@ -67,11 +72,16 @@ const Forum = () => {
     e.preventDefault();
     if (replyContent.trim() && user) {
       const updatedPost = posts.map(post => 
-        post.id === postId ? {
-          ...post,
-          replies: [...post.replies, { username: user.displayName || 'Anonymous', content: replyContent, timestamp: new Date().toISOString() }],
-          showReply: false // Hide reply textarea after submitting
-        } : post
+        post.id === postId
+          ? {
+              ...post,
+              replies: [
+                ...post.replies,
+                { username: user.displayName || 'Anonymous', content: replyContent, timestamp: new Date().toISOString() },
+              ],
+              showReply: false, // Hide reply textarea after submitting
+            }
+          : post
       );
 
       // Update post in Firestore
@@ -84,7 +94,7 @@ const Forum = () => {
 
   const handleLike = async (index) => {
     const post = posts[index];
-    
+
     // Prevent liking/disliking multiple times
     if (post.userReaction === 'like') {
       return; // Do nothing if already liked
@@ -96,9 +106,9 @@ const Forum = () => {
             ...post, 
             likes: post.userReaction === 'dislike' ? post.likes + 1 : post.likes + 1, // Adjust likes
             dislikes: post.userReaction === 'dislike' ? post.dislikes - 1 : post.dislikes, // Adjust dislikes
-            userReaction: 'like' 
+            userReaction: 'like', 
           } 
-        : { ...post, userReaction: post.userReaction === 'like' ? null : post.userReaction }
+        : post
     );
 
     setPosts(updatedPosts);
@@ -123,9 +133,9 @@ const Forum = () => {
             ...post, 
             dislikes: post.userReaction === 'like' ? post.dislikes + 1 : post.dislikes + 1, // Adjust dislikes
             likes: post.userReaction === 'like' ? post.likes - 1 : post.likes, // Adjust likes
-            userReaction: 'dislike' 
+            userReaction: 'dislike', 
           } 
-        : { ...post, userReaction: post.userReaction === 'dislike' ? null : post.userReaction }
+        : post
     );
 
     setPosts(updatedPosts);
@@ -153,14 +163,11 @@ const Forum = () => {
                   <strong>{post.username}</strong> <span className="timestamp">{new Date(post.timestamp).toLocaleString()}</span>
                 </div>
                 <p style={{ color: 'black' }}>{post.content}</p> {/* Post content in black */}
-                {/* Like and Dislike Buttons with spacing */}
                 <div className="like-dislike">
                   <button onClick={() => handleLike(index)}>👍 {post.likes}</button>
                   <button onClick={() => handleDislike(index)}>👎 {post.dislikes}</button>
-                  {/* Reply Button */}
                   <button onClick={() => toggleReply(index)}>Reply</button>
                 </div>
-                {/* Reply Textarea */}
                 {post.showReply && (
                   <form onSubmit={(e) => handleReplySubmit(post.id, e)}>
                     <textarea
@@ -173,12 +180,11 @@ const Forum = () => {
                     <button type="submit" className="submit-reply-button">Reply</button>
                   </form>
                 )}
-                {/* Display Replies */}
                 {post.replies.length > 0 && (
                   <div className="replies">
                     {post.replies.map((reply, i) => (
                       <div key={i} className="reply" style={{ color: 'black' }}>
-                        <strong>{reply.username}</strong>: {reply.content} {/* Reply content in black */}
+                        <strong>{reply.username}</strong>: {reply.content} 
                       </div>
                     ))}
                   </div>
