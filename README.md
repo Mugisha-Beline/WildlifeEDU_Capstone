@@ -5,10 +5,6 @@
 ### Description
 WildlifEdu is an online education platform focused on animal conservation, with special attention to endangered species in Africa. The main goal of this platform is to collaborate with local communities, conservation organizations, and specialists to promote sustainable wildlife conservation. Additionally, it encourages eco-tourism by actively involving people in conservation efforts. WildlifeEDU leverages digital technology and innovation to support various conservation projects, serving as a blueprint for future conservation efforts within similar ecosystems.
 
-### Link to GitHub Repository
-[GitHub Repository](https://github.com/Mugisha-Beline/WildlifeEDU_Capstone.git)  
-
----
 
 ## Tech Stack
 - **Frontend**: React.js
